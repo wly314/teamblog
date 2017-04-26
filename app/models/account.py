@@ -6,7 +6,7 @@ from .base import *
 """文章表"""
 class Account(Base, db.Model):
 
-    __tablename__ = 'account'
+    __tablename__ = 'v1'
 
     id = db.Column(db.Integer, primary_key=True)
     # 用户名　仅限邮箱注册
@@ -27,3 +27,15 @@ class Account(Base, db.Model):
     introduction = db.Column(db.Text, server_default='')
     # 删除标志
     delete = db.Column(db.Boolean, server_default='false')
+
+    def is_authenticated(self):
+
+        return True
+
+
+    def is_active(self):
+        return True
+
+
+    def is_anonymous(self):
+        return False

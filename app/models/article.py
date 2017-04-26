@@ -14,6 +14,6 @@ class Article(Base, db.Model):
     # 内容
     content = db.Column(db.Text, server_default='')
     # 作者
-    author_id = db.Column(db.Integer, db.ForeignKey('account.id'), server_default=0, index=True)
+    author_id = db.Column(db.Integer, db.ForeignKey('v1.id'), server_default=0, index=True)
     # 删除标志
     delete = db.Column(db.Boolean, server_default='false')

@@ -1,10 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends "/home/base.html" %}
+
+{% block title %}注册{% endblock %}
+
+{% block css %}
+    <link href="/static/css/account/register.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal" action="" method="post" name="register">
+                    {{ form.hidden_tag() }}
+                    <span class="heading">注册一个用户</span>
+                    <div class="input-group">
+                        <span class="input-group-addon">用户名</span>
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="用户名是一个邮箱">
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">密  码</span>
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="同时包含字母、数字、特殊符号任意两种">
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon">重复密码</span>
+                        <input type="text" class="form-control" placeholder="再输入一遍密码">
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <button type="submit" class="btn btn-default" id="btn-register">提交注册</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  <!--container-->
+{% endblock %}
+
+
+<script>
+
+    $(document).ready(function() {
+       MockTask.register();
+    });
+
+    MockTask = {
+
+        startId: "btn-register",
+
+        register: function(){
+
+            var email = $('#inputEmail3').val();
+
+            var password = $('#inputPassword3').val();
+
+            console.log(11111111);
+
+            if(!email){
+                layer.alert('请输入用户名', {icon: 6});
+                return false;
+            }
+
+            if(!email.match(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)){
+                layer.alert('请输入正确格式的邮箱', {icon: 6});
+                return false;
+            }
+
+            if(!password){
+                layer.alert('请输入密码', {icon: 6});
+                return false;
+            }
+
+            var url = '/v1/account/register';
+
+            ajaxpost(url,{mobileno:mobileno,password:password},function (res) {
+
+                console.dir(res);
+
+                if(res.resid==200){
+                    layer.alert(res.msg,{icon:6},function () {
+                        window.location.href = '/';
+                    });
+
+                }else{
+                    layer.alert(res.msg,{icon:6});
+                }
+            })
+
+        },
+    };
+
+</script>

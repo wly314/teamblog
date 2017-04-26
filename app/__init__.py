@@ -22,5 +22,9 @@ def create_app(config_name):
 # 注册蓝图
 def register_blueprints(app):
     from views import blueprints
+    from app.api import blueprints as bp_api
     for view, url_prefix in blueprints:
         app.register_blueprint(view, url_prefix=url_prefix)
+
+    for view_api, url_prefix_api in bp_api:
+        app.register_blueprint(view_api, url_prefix=url_prefix_api)
