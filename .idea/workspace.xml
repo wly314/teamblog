@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc9add09-9318-4d01-b625-347529d8df3e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/api/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/api/v1/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/api/v1/account.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/forms/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/forms/account_form.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/css/account/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/css/account/register.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/test/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/base.py" afterPath="$PROJECT_DIR$/app/config/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/account.py" afterPath="$PROJECT_DIR$/app/models/account.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/article.py" afterPath="$PROJECT_DIR$/app/models/article.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/account/login.html" afterPath="$PROJECT_DIR$/app/templates/account/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/account/register.html" afterPath="$PROJECT_DIR$/app/templates/account/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/home/base.html" afterPath="$PROJECT_DIR$/app/templates/home/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/__init__.py" afterPath="$PROJECT_DIR$/app/views/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/account.py" afterPath="$PROJECT_DIR$/app/views/account.py" />
-    </list>
+    <list default="true" id="bc9add09-9318-4d01-b625-347529d8df3e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +81,7 @@
       <file leaf-file-name="account.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/account.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
+            <state relative-caret-position="212">
               <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
@@ -500,7 +481,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="108" y="24" width="1174" height="681" extended-state="5" />
+    <frame x="108" y="24" width="1174" height="681" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -848,7 +829,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/account.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
+        <state relative-caret-position="212">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
