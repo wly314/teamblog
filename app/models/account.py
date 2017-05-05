@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from .base import *
+from app import login_manager
+from flask_login import UserMixin
 
 
-"""文章表"""
-class Account(Base, db.Model):
+"""账户表"""
 
-    __tablename__ = 'v1'
+
+class Account(Base, UserMixin, db.Model):
+
+    __tablename__ = 'account'
 
     id = db.Column(db.Integer, primary_key=True)
     # 用户名　仅限邮箱注册
@@ -28,14 +32,8 @@ class Account(Base, db.Model):
     # 删除标志
     delete = db.Column(db.Boolean, server_default='false')
 
-    def is_authenticated(self):
 
-        return True
-
-
-    def is_active(self):
-        return True
-
-
-    def is_anonymous(self):
-        return False
+# 用户认证的回调函数
+@login_manager.user_loader
+def load_user(user_id):
+    return Account.query.get(int(user_id))

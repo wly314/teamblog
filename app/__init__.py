@@ -2,10 +2,21 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+from flask_sockets import Sockets
 from app.config import config_dict
 
 
 db = SQLAlchemy()
+
+
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
+login_manager.login_view = 'main_auth.admin_login'
+login_manager.login_message = u'请先登录'
+
+
+sockets = Sockets()
 
 
 #: config_name:配置名称
@@ -15,6 +26,12 @@ def create_app(config_name):
 
     db.init_app(app)
     register_blueprints(app)
+    sockets.init_app(app)
+
+    from gevent import pywsgi
+    from geventwebsocket.handler import WebSocketHandler
+    server = pywsgi.WSGIServer(('', 5000), app, handler_class=WebSocketHandler)
+    server.serve_forever()
 
     return app
 
