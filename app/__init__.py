@@ -4,7 +4,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_sockets import Sockets
-from app.config import config_dict
+from app.config import config_dict, base
+from celery import Celery
 
 
 db = SQLAlchemy()
@@ -17,6 +18,9 @@ login_manager.login_message = u'请先登录'
 
 
 sockets = Sockets()
+
+
+celery = Celery(__name__, broker=base.CELERY_BROKER_URL)
 
 
 #: config_name:配置名称
@@ -32,6 +36,8 @@ def create_app(config_name):
     from geventwebsocket.handler import WebSocketHandler
     server = pywsgi.WSGIServer(('', 5000), app, handler_class=WebSocketHandler)
     server.serve_forever()
+
+    celery.conf.update(app.config)
 
     return app
 
